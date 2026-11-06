@@ -1,29 +1,14 @@
-
-// MOBILE NAVIGATION
-
-const menuToggle = document.getElementById("menu-toggle");
-const mainNav = document.getElementById("main-nav");
-
-menuToggle.addEventListener("click", () => {
-  const isOpen = mainNav.classList.toggle("show");
-
-  menuToggle.setAttribute("aria-expanded", isOpen);
-  menuToggle.textContent = isOpen ? "✕" : "☰";
-});
-
-
-// RANDOM THOUGHT GENERATOR
-
 const thoughts = [
-  "The internet is a strange place. I think I like it here.",
-  "I wonder how many versions of myself exist in other people's memories.",
+  "What if fish have no idea what water is?",
+  "I wonder if my cat has a secret life.",
+  "The internet was more fun when everything had sparkles.",
+  "I should probably be doing something productive.",
+  "What if dreams are just alternate universes?",
+  "I wish I could live inside my favourite anime.",
+  "Why do snacks taste better at midnight?",
   "Somewhere, someone is having the best day of their life.",
-  "I collect unfinished ideas like they're precious little treasures.",
-  "Perhaps the little things were the big things all along.",
-  "What if I just disappeared into a bookstore for three days?",
-  "There is something comforting about making things nobody asked for.",
-  "The world is enormous and I am very, very curious.",
-  "I hope future me remembers how much I enjoyed this moment."
+  "I need more cute things. This is a serious problem.",
+  "What if aliens are also struggling with homework?"
 ];
 
 const thoughtDisplay = document.getElementById("random-thought");
@@ -35,9 +20,8 @@ thoughtButton.addEventListener("click", () => {
   let newThought;
 
   do {
-    newThought = thoughts[
-      Math.floor(Math.random() * thoughts.length)
-    ];
+    const randomIndex = Math.floor(Math.random() * thoughts.length);
+    newThought = thoughts[randomIndex];
   } while (newThought === currentThought);
 
   thoughtDisplay.textContent = newThought;
