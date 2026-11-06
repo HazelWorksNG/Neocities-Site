@@ -55,7 +55,7 @@
           <div class="avatar-frame">
             <div class="avatar-placeholder">
               <span>★</span>
-              <small>YOUR IMAGE HERE</small>
+              <img src="ASSETS/IMAGES/Pic.jpeg" alt="Aster's pfp">
             </div>
           </div>
 
@@ -106,6 +106,40 @@
         <div class="sidebar-decoration">
           <span>☆</span> stay weird <span>☆</span>
         </div>
+
+        <section class="panel music-panel">
+          <h2 class="panel-title">♫ ASTER'S JUKEBOX ♫</h2>
+
+          <div class="music-player">
+            <div class="music-disc">💿</div>
+
+            <div class="music-info">
+              <strong id="track-title">Nothing playing...</strong>
+              <small id="track-artist">Aster's playlist</small>
+            </div>
+          </div>
+
+          <audio id="background-music"></audio>
+
+          <div class="music-controls">
+            <button id="music-toggle" type="button">▶ PLAY</button>
+            <button id="next-track" type="button">NEXT ♡</button>
+          </div>
+
+          <label class="volume-control">
+            volume:
+            <input
+              type="range"
+              id="music-volume"
+              min="0"
+              max="1"
+              step="0.05"
+              value="0.4"
+            >
+          </label>
+
+          <p class="music-note">♪ listening to the internet ♪</p>
+        </section>
 
       </aside>
 

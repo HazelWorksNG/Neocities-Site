@@ -504,6 +504,94 @@ body {
   background: #b95c8b;
 }
 
+.music-panel {
+  background: #fff0f6;
+}
+
+.music-player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  border: 1px dashed #d58ab1;
+}
+
+.music-disc {
+  font-size: 35px;
+  animation: disc-spin 5s linear infinite;
+  animation-play-state: paused;
+}
+
+.music-player.playing .music-disc {
+  animation-play-state: running;
+}
+
+@keyframes disc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.music-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.music-info strong {
+  color: #bd6095;
+  font-size: 11px;
+}
+
+.music-info small {
+  color: #947c91;
+  font-size: 9px;
+}
+
+.music-controls {
+  display: flex;
+  gap: 6px;
+  margin-top: 9px;
+}
+
+.music-controls button {
+  flex: 1;
+  padding: 7px 4px;
+  color: white;
+  background: #d77fa8;
+  border: 2px outset #edb1cf;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.music-controls button:active {
+  border-style: inset;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+.volume-control input {
+  width: 100%;
+  accent-color: #d77fa8;
+}
+
+.music-note {
+  margin-bottom: 0;
+  text-align: center;
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+}
+
 /* FOOTER */
 
 .site-footer {
