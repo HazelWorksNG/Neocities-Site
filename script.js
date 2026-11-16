@@ -29,19 +29,19 @@ thoughtButton.addEventListener("click", () => {
 
 const playlist = [
   {
-    title: "Dreaming in pixels",
+    title: "Annen",
     artist: "Aster's playlist",
-    file: "assets/music/song-1.mp3"
+    file: "ASSETS/MUSIC/song-1.mp3"
   },
   {
-    title: "Midnight daydream",
+    title: "Cupid",
     artist: "Aster's playlist",
-    file: "assets/music/song-2.mp3"
+    file: "ASSETS/MUSIC/song-2.mp3"
   },
   {
-    title: "Internet nostalgia",
+    title: "popatouia",
     artist: "Aster's playlist",
-    file: "assets/music/song-3.mp3"
+    file: "ASSETS/MUSIC/song-3.mp3"
   }
 ];
 

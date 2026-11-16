@@ -683,6 +683,18 @@ body {
 
 /* LITTLE BOUNCING EFFECT */
 
+.sticker {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.sticker:hover {
+  transform: rotate(-5deg) scale(1.08);
+  transition: transform 0.2s ease;
+}
+
 @keyframes tiny-bounce {
   0%, 100% {
     transform: translateY(0);
