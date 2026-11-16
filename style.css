@@ -196,10 +196,19 @@ body {
   height: 130px;
   margin: 10px auto;
   padding: 5px;
+  overflow: hidden;
 
   background: white;
   border: 2px solid #e7a5c5;
   box-shadow: 3px 3px 0 #f3d5e4;
+}
+
+.avatar-frame img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .avatar-placeholder {
@@ -631,6 +640,61 @@ body {
 .footer-credit {
   font-size: 10px;
   font-style: italic;
+}
+
+/* STICKER-LIKE HOVER EFFECTS */
+
+.favourite-item {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.favourite-item:hover {
+  transform: translateY(-5px) rotate(4deg) scale(1.04);
+  z-index: 2;
+}
+
+.favourite-item::after {
+  content: "✦";
+  position: absolute;
+  top: -8px;
+  right: -5px;
+  color: #e987b8;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.2s ease;
+}
+
+.favourite-item:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* PROFILE AVATAR */
+
+.avatar-frame {
+  transition: transform 0.3s ease;
+}
+
+.avatar-frame:hover {
+  transform: rotate(-3deg) scale(1.04);
+}
+
+/* LITTLE BOUNCING EFFECT */
+
+@keyframes tiny-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.sidebar-decoration:hover {
+  animation: tiny-bounce 0.4s ease;
 }
 
 /* RESPONSIVE */

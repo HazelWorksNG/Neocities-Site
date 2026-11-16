@@ -110,3 +110,60 @@ volumeSlider.addEventListener("input", () => {
 
 audio.volume = 0.4;
 loadTrack(currentTrack);
+
+// =============================
+// ASTER'S UI CLICK SOUNDS
+// =============================
+
+let soundContext = null;
+
+function playClickSound() {
+  const AudioContext =
+    window.AudioContext || window.webkitAudioContext;
+
+  if (!AudioContext) return;
+
+  if (!soundContext) {
+    soundContext = new AudioContext();
+  }
+
+  if (soundContext.state === "suspended") {
+    soundContext.resume();
+  }
+
+  const now = soundContext.currentTime;
+
+  const oscillator = soundContext.createOscillator();
+  const gain = soundContext.createGain();
+
+  oscillator.type = "triangle";
+
+  oscillator.frequency.setValueAtTime(880, now);
+  oscillator.frequency.exponentialRampToValueAtTime(
+    520,
+    now + 0.09
+  );
+
+  gain.gain.setValueAtTime(0.16, now);
+  gain.gain.exponentialRampToValueAtTime(
+    0.001,
+    now + 0.12
+  );
+
+  oscillator.connect(gain);
+  gain.connect(soundContext.destination);
+
+  oscillator.start(now);
+  oscillator.stop(now + 0.12);
+}
+
+// Listen for clicks on interactive elements
+document.addEventListener("pointerdown", (event) => {
+  const target = event.target.closest(
+    "a, button, .favourite-item"
+  );
+
+  if (target) {
+    playClickSound();
+  }
+}, true);
